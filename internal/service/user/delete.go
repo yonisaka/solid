@@ -2,6 +2,7 @@ package user
 
 import (
 	"encoding/json"
+	"github.com/yonisaka/solid/internal/dto"
 	"github.com/yonisaka/solid/internal/presentations"
 	"github.com/yonisaka/solid/internal/repositories"
 	"github.com/yonisaka/solid/internal/service/contract"
@@ -38,6 +39,21 @@ func (u *userDelete) Serve(req contract.Request) contract.Response {
 		}
 	}
 
+	user, err := u.userRepo.FindOne(param.ID)
+	if err != nil {
+		return contract.Response{
+			Message: err.Error(),
+			Data:    nil,
+		}
+	}
+
+	if user == nil {
+		return contract.Response{
+			Message: "record not found",
+			Data:    nil,
+		}
+	}
+
 	err = u.userRepo.Delete(param.ID)
 	if err != nil {
 		return contract.Response{
@@ -48,6 +64,6 @@ func (u *userDelete) Serve(req contract.Request) contract.Response {
 
 	return contract.Response{
 		Message: "success",
-		Data:    nil,
+		Data:    dto.UserToResponse(*user),
 	}
 }
