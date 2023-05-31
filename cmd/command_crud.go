@@ -11,7 +11,7 @@ import (
 )
 
 // GetListUser is a method command cli to get list user
-func (cmd *Command) GetListUser() *cli.Command {
+func (cmd *Command) getListUser() *cli.Command {
 	return &cli.Command{
 		Name:  "user:list",
 		Usage: "A command to get list user",
@@ -35,7 +35,7 @@ func (cmd *Command) GetListUser() *cli.Command {
 }
 
 // GetDetailUser is a method command cli to get detail user
-func (cmd *Command) GetDetailUser() *cli.Command {
+func (cmd *Command) getDetailUser() *cli.Command {
 	return &cli.Command{
 		Name:  "user:detail",
 		Usage: "A command to get detail user",
@@ -63,7 +63,7 @@ func (cmd *Command) GetDetailUser() *cli.Command {
 }
 
 // CreateUser is a method command cli to create user
-func (cmd *Command) CreateUser() *cli.Command {
+func (cmd *Command) createUser() *cli.Command {
 	return &cli.Command{
 		Name:  "user:create",
 		Usage: "A command to create user",
@@ -95,7 +95,7 @@ func (cmd *Command) CreateUser() *cli.Command {
 }
 
 // UpdateUser is a method command cli to update user
-func (cmd *Command) UpdateUser() *cli.Command {
+func (cmd *Command) updateUser() *cli.Command {
 	return &cli.Command{
 		Name:  "user:update",
 		Usage: "A command to update user",
@@ -128,7 +128,7 @@ func (cmd *Command) UpdateUser() *cli.Command {
 }
 
 // DeleteUser is a method command cli to delete user
-func (cmd *Command) DeleteUser() *cli.Command {
+func (cmd *Command) deleteUser() *cli.Command {
 	return &cli.Command{
 		Name:  "user:delete",
 		Usage: "A command to delete user",

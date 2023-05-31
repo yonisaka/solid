@@ -7,11 +7,11 @@ func (cmd *Command) Build() []*cli.Command {
 	cmd.registerCLI(cmd.newDBMigrate())
 	cmd.registerCLI(cmd.newDBSeed())
 
-	cmd.registerCLI(cmd.GetListUser())
-	cmd.registerCLI(cmd.GetDetailUser())
-	cmd.registerCLI(cmd.CreateUser())
-	cmd.registerCLI(cmd.UpdateUser())
-	cmd.registerCLI(cmd.DeleteUser())
+	cmd.registerCLI(cmd.getListUser())
+	cmd.registerCLI(cmd.getDetailUser())
+	cmd.registerCLI(cmd.createUser())
+	cmd.registerCLI(cmd.updateUser())
+	cmd.registerCLI(cmd.deleteUser())
 
 	return cmd.CLI
 }
